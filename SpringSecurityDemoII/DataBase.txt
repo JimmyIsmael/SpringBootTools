@@ -1,0 +1,39 @@
+CREATE DATABASE db_spring_security_demo
+  WITH OWNER = postgres
+    ENCODING = 'UTF8'
+    TABLESPACE = pg_default;
+    
+CREATE TABLE public.roles (
+  id BIGINT NOT NULL,
+  role VARCHAR(255),
+  CONSTRAINT roles_pkey PRIMARY KEY(id)
+) 
+WITH (oids = false);
+
+CREATE TABLE public.users (
+  id BIGINT NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  full_name VARCHAR(255),
+  password VARCHAR(255) NOT NULL,
+  CONSTRAINT uk_6dotkott2kjsp8vw4d0m25fb7 UNIQUE(email),
+  CONSTRAINT users_pkey PRIMARY KEY(id)
+) 
+WITH (oids = false);
+
+
+CREATE TABLE public.users_roles (
+  user_id BIGINT NOT NULL,
+  role_id BIGINT NOT NULL,
+  CONSTRAINT users_roles_pkey PRIMARY KEY(user_id, role_id),
+  CONSTRAINT fk2o0jvgh89lemvvo17cbqvdxaa FOREIGN KEY (user_id)
+    REFERENCES public.users(id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+    NOT DEFERRABLE,
+  CONSTRAINT fkj6m8fwv7oqv74fcehir1a9ffy FOREIGN KEY (role_id)
+    REFERENCES public.roles(id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+    NOT DEFERRABLE
+) 
+WITH (oids = false);
