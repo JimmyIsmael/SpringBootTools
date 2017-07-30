@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/header-sdi :: header-sdi" />
+
+<body>
+<div id="throbber" style="display:none; min-height:120px;"></div>
+<div id="noty-holder"></div>
+    <div id="wrapper">
+        <div th:replace="common/navbar-sdi :: sdi-navbar"/>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row" id="main" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-lg-8">
+                                <div class="panel panel-default"><div class="panel-heading">Users Entry</div>
+                                    <div class="panel-body">
+                                        <form class="form-horizontal"  th:action="@{/SaveUser}" th:object="${user}" method="post">
+
+                                            <!-- Text input-->
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label" for="id">ID:</label>
+                                                <div class="col-md-2">
+                                                    <input  id="id" name="id" type="text" th:field="*{id}" class="form-control input-md" readonly="readonly"/>
+                                                </div>
+                                            </div>
+
+                                            <!-- Text input-->
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label" for="firstName">First Name:</label>
+                                                <div class="col-md-4">
+                                                    <input required="true" id="firstName" name="firstName" type="text" th:field="*{fullName}" class="form-control input-md"/>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!-- Text input-->
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label" for="userName">User Name:</label>
+                                                <div class="col-md-4">
+                                                    <input required="true" id="userName" name="userName" type="text" th:field="*{email}" class="form-control input-md"/>
+                                                </div>
+                                            </div>
+
+                                            <!-- Password input-->
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label" for="password">Password:</label>
+                                                <div class="col-md-4">
+                                                    <input required="true" id="password" name="password" type="password" th:field="*{password}" class="form-control input-md"/>
+                                                </div>
+                                            </div>
+
+                                           <div class="form-group">
+                                                <label class="col-md-4 control-label" for="id_type">User Type</label>
+                                                <div class="col-md-4">
+                                                    <div th:if="${userType != null and not #lists.isEmpty(userType)}">
+                                                        <select th:field="*{roles}" id="id_type" class="form-control input-md">
+                                                            <option th:each="dropDownItem : ${userType}"
+                                                                    th:value="${dropDownItem.id}"
+                                                                    th:text="${dropDownItem.role}" />
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Button (Double) -->
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label" for="saveButton"></label>
+                                                <div class="col-md-8">
+                                                    <button type="submit" id="saveButton" name="saveButton" class="btn btn-primary">
+                                                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+                                                    <a href="#" class="btn btn-warning" role="button" th:href="${'/ShowUsers'}"><i class="fa fa-close"></i> Cancel</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.row-main -->
+            </div><!-- /.container-fluid -->
+        </div><!-- /#page-wrapper -->
+    </div>
+<div th:replace="common/header-sdi :: before-body-scripts" />
+</body>
+</html>

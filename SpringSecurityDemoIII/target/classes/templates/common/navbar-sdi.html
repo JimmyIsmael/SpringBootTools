@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<body>
+
+<div th:fragment="sdi-navbar" class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid navbar-border">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><i class="fa fa-home"></i> Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li sec:authorize="hasRole('ROLE_ADMIN')"><a href="/ShowUsers"><i class="fa fa-user"></i> Users</a></li>
+                    <li><a href="/QualityTest"><i class="fa fa-fw fa-star"></i> Test</a></li>
+                    <li class="dropdown" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-anchor"></i> Support <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><i class="fa fa-envelope"></i> Email</a></li>
+                            <li><a href="#"><i class="fa fa-comments"></i> Chat</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> Phone Support</a></li>
+                            <li class="divider"></li>
+                            <li class="active"><a href="#"><i class="fa fa-credit-card"></i> Make a Payment</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <div class="navbar-text navbar-right">
+                    <form sec:authorize="isAuthenticated()" id="frmlogout" th:action="@{/logout}" method="post" class="form-inline">
+                        <b>Welcome <span sec:authentication="name"> Guest </span> |
+                            <a href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;" class="color-blue"><i class="glyphicon glyphicon-log-out"></i> Logout</a>
+                        </b>
+                    </form>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+</body>
+</html>
