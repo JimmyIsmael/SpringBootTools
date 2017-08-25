@@ -26,6 +26,9 @@ public class SalesRosterController {
 
         PageWrapper<Roster> page = new PageWrapper<Roster>(
                 rosterFileService.listAll(new PageRequest(start-1, size, Sort.Direction.ASC, "ZRT")), "/");
+        
+        //"ZRT" is the field what it sorts by.
+        //"/" is the view that calls the method.
 
         //Iterable<Roster> roster=rosterFileService.listAll();
         model.addAttribute("page",page);
