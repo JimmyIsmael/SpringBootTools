@@ -2,12 +2,12 @@
 
 This project will give an example of how to create an XLSX file and download it from your spring controller.
 
-## What you need to run this project?
+### What you need to run this project?
 
 First of all you need to run the SQL command that create the EMPLOYEE table, you can find it under the resources folder.
 
 
-## How to Add the SQLServer Dependency to POM file
+### How to Add the SQLServer Dependency to POM file
 
 1.	To add the SQL dependency to POM file the first thing we need to do is download the driver from here:
 
