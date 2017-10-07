@@ -6,6 +6,7 @@ You will find examples of:
 * Spring JPA with PostgreSQL.
 * Spring JPA with SQLserver.
 * Spring Security.
+* Spring with Azure AD.
 * Apache POI(Files creation library).
 * How to send files from controller to the client.
 
