@@ -1,5 +1,5 @@
 # Spring Boot Learning Projects And Tools
-This repository contains a compilation of projects that will give some tools and skeletons to build your Spring Boot app. 
+This repository contains a compilation of projects that will give you some tools and skeletons to build your Spring Boot app. 
 
 You will find examples of:
 * Spring JPA.
