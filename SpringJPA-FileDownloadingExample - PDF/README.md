@@ -19,18 +19,21 @@ mvn install:install-file -Dfile=sqljdbc4.jar -Dpackaging=jar -DgroupId=com.micro
 
 3.	Just left add this dependency to the POM:
 
+```
 <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/sqljdbc4 -->
   <dependency>
       <groupId>com.microsoft.sqlserver</groupId>
       <artifactId>sqljdbc4</artifactId>
       <version>4.0</version>
   </dependency>
+ ```
 
 ### Add the Itext dependendy to your POM
 
 Itext is a tool that allow you to create PDFs files in a simple and fast way.
 
 Just add this to your pom:
+
 ```
 <dependency>
 			<groupId>com.itextpdf</groupId>
