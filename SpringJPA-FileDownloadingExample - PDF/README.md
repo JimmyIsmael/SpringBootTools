@@ -36,8 +36,8 @@ Just add this to your pom:
 
 ```
 <dependency>
-			<groupId>com.itextpdf</groupId>
-			<artifactId>itextpdf</artifactId>
-			<version>5.5.10</version>
+	<groupId>com.itextpdf</groupId>
+	<artifactId>itextpdf</artifactId>
+	<version>5.5.10</version>
 </dependency>
 ```
