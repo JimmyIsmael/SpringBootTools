@@ -8,6 +8,7 @@ You will find examples for:
 * Spring Security.
 * Spring with Azure AD.
 * Apache POI(Files creation library).
+* IText (PDF creation library).
 * How to send files from controller to the client.
 
 And much more. 
