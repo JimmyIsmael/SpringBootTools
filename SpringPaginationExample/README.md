@@ -1,6 +1,6 @@
 # Pagination with SpringBoot and PageDialect
 
-This example will show you how to have a pagination setion on your project using PageDialect and SpringDataJPA.
+This example will show you how to have a pagination section on your project using PageDialect and SpringDataJPA.
 
 ## To run this project, keep in mind that:
 
