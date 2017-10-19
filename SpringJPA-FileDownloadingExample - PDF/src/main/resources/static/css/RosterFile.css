@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #tableScroller{
     width: 100%;
     height:100%;
@@ -11,4 +12,19 @@
 
 #noResize {
     resize: none;
+=======
+#tableScroller{
+    width: 100%;
+    height:100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#mainContainer{
+    width: 100%;
+}
+
+#noResize {
+    resize: none;
+>>>>>>> a7a8243b01ff76dbde78931f5f258da59e145777
 }
