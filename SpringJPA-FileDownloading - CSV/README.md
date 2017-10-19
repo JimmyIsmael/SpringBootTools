@@ -1,6 +1,6 @@
 # How to create a CSV and download it from Spring Controller.
 
-This project will give an example of how to create a XLSX file and download it from your spring controller.
+This project will give an example of how to create a CSV file and download it from your spring controller.
 
 ## What you need to run this project?
 
