@@ -1,4 +1,4 @@
-# How to create a XLSX and download it from Spring Controller.
+# How to create a CSV and download it from Spring Controller.
 
 This project will give an example of how to create a XLSX file and download it from your spring controller.
 
@@ -26,14 +26,3 @@ mvn install:install-file -Dfile=sqljdbc4.jar -Dpackaging=jar -DgroupId=com.micro
             <version>4.0</version>
         </dependency>
 
-### Add the Apache POI dependendy to your POM
-Apache POI is a tool that allow you to create XLSX files in a simple and fast way.
-
-Just add this to your pom:
-```
-<dependency>
-	<groupId>org.apache.poi</groupId>
-	<artifactId>poi-ooxml</artifactId>
-	<version>3.15</version>
-</dependency>
-```
