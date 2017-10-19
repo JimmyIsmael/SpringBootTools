@@ -18,6 +18,6 @@ function searchSalesman() {
     }
 
 }
-function exportToExcel() {
-    window.location.href="/exportToExcel";
+function exportToCSV() {
+    window.location.href="/exportToCSV";
 }
