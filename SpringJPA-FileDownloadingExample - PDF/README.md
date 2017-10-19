@@ -1,6 +1,6 @@
 # How to create a PDF and download it from Spring Controller.
 
-This project will give an example of how to create a PDF file and download it from your spring controller.
+This project will give you an example of how to create a PDF file and download it from your spring controller.
 
 ## What you need to run this project?
 
@@ -30,7 +30,7 @@ mvn install:install-file -Dfile=sqljdbc4.jar -Dpackaging=jar -DgroupId=com.micro
 
 ### Add the Itext dependendy to your POM
 
-Itext is a tool that allow you to create PDFs files in a simple and fast way.
+Itext is a tool that allow you to create PDFs files in a simple and quickly way.
 
 Just add this to your pom:
 
