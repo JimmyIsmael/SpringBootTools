@@ -1,5 +1,5 @@
 # Azure Service Bus with SpringBoot
-This project will show you how to use Azure Service Bus with Springboot.
+This project will show you how to use Azure Service Bus with SpringBoot.
 
 You will be sending a JSON message to the queue and picking it up and parsing it to the console.
 
