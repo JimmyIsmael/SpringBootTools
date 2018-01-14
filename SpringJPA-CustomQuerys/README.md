@@ -19,7 +19,7 @@ In order to use this project you need to add the following dependency to your PO
     <artifactId>postgresql</artifactId>
 </dependency>
 ```
-### Dependencies
+### Database
 Also, you need to create the Users table on your database
 
 ```
