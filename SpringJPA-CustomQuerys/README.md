@@ -5,6 +5,7 @@ querys that can be modified on the run time.
 
 ## To use this project:
 
+### Dependencies
 In order to use this project you need to add the following dependency to your POM.
 
 ```
@@ -18,7 +19,20 @@ In order to use this project you need to add the following dependency to your PO
     <artifactId>postgresql</artifactId>
 </dependency>
 ```
+### Dependencies
+Also, you need to create the Users table on your database
 
+```
+CREATE TABLE public.users (
+  id BIGINT NOT NULL,
+  apellido VARCHAR(255),
+  contrasena VARCHAR(255),
+  nombre VARCHAR(255),
+  usuario VARCHAR(255),
+  CONSTRAINT users_pkey PRIMARY KEY(id)
+) 
+WITH (oids = false);
+```
 ### Where can you find the examples?
 Static Custom Query: 
 Within the UserRepository interface you will find an static custom query example.
