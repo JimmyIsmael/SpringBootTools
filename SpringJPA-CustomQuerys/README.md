@@ -34,10 +34,10 @@ CREATE TABLE public.users (
 WITH (oids = false);
 ```
 ## Where to find the examples
-###Static Custom Query: 
+### Static Custom Query: 
 Within the UserRepository interface you will find an static custom query example.
 
-###TypedQuery Example: 
+### TypedQuery Example: 
 Within the UserServiceImpl interface you will find a TypedQuery example.
 
 Enjoy it!
