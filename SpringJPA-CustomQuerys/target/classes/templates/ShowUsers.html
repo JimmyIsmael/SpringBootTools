@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!--<head th:replace="common/header :: common-header" />
+
+<body>
+<div th:replace="common/navbar :: common-navbar"/>-->
+
+<head th:replace="common/header-sdi :: header-sdi" />
+
+    <body>
+    <div th:replace="common/navbar-sdi :: sdi-navbar"/>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 .col-sm-6 .col-lg-8">
+                    <div class="well">
+                        <div class="text-left">
+                            <h3 class="text-center">User List</h3>
+                            <div class="row">
+                                <form method="get" th:action="@{/ByFirstName}"  >
+                                    <div class="col-md-4" >
+                                        <div class="form-group">
+                                            <input type="text" id="userName" name="userName" placeholder="User Name" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Search by Name</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="row">
+                                <form method="get" th:action="@{/ByLastName}"  >
+                                    <div class="col-md-4" >
+                                        <div class="form-group">
+                                            <input type="text" id="userLastName" name="userLastName" placeholder="User Last Name" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Search by Last name</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div th:if="${not #lists.isEmpty(user)}">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Users</div>
+                                    <div class="panel-body">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Username</th>
+                                                    <th>Password</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="user : ${user}">
+                                                    <td th:text="${user.id}"></td>
+                                                    <td th:text="${user.nombre}"></td>
+                                                    <td th:text="${user.apellido}"></td>
+                                                    <td th:text="${user.usuario}"></td>
+                                                    <td th:text="${user.contrasena}"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </body>
+</html>

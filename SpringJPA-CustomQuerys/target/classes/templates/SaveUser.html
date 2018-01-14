@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="common/header-sdi :: header-sdi"/>
+
+<body>
+<div th:replace="common/navbar-sdi :: sdi-navbar"/>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-lg-8">
+                <form class="form-horizontal" action="#" th:action="@{/SaveUser}" th:object="${user}" method="post">
+                    <!-- Form Name -->
+                    <legend>User Input</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="id">ID:</label>
+                        <div class="col-md-2">
+                            <input id="id" name="id" type="text" th:field="*{id}" class="form-control input-md"/>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="firstName">First Name:</label>
+                        <div class="col-md-4">
+                            <input id="firstName" name="firstName" type="text" th:field="*{nombre}" class="form-control input-md"/>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="lastName">Last Name:</label>
+                        <div class="col-md-4">
+                            <input id="lastName" name="lastName" type="text" th:field="*{apellido}" class="form-control input-md"/>
+                        </div>
+                    </div>
+
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="userName">User Name:</label>
+                        <div class="col-md-4">
+                            <input id="userName" name="userName" type="text" th:field="*{usuario}" class="form-control input-md"/>
+                        </div>
+                    </div>
+
+                    <!-- Password input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="password">Password:</label>
+                        <div class="col-md-4">
+                            <input id="password" name="password" type="password" th:field="*{contrasena}" class="form-control input-md"/>
+                        </div>
+                    </div>
+
+                    <!-- Button (Double) -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="saveButton"></label>
+                        <div class="col-md-8">
+                            <button type="submit" id="saveButton" name="saveButton" class="btn btn-primary">Save</button>
+                            <button id="cancelButton" name="cancelButton" class="btn btn-warning">Cancel</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+<div th:replace="common/header :: before-body-scripts" />
+</body>
+</html>
