@@ -1,0 +1,57 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.autocomplete.js}"></script>
+    <link type="text/css" th:href="@{/css/Main.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<h2><strong>Spring Boot + jQuery Autocomplete example</strong></h2>
+
+<div>
+    <div class="row">
+        <form class="form-horizontal">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="w-input-search">Your favorite language:</label>
+                    <div class="col-md-3">
+                        <input type="text"  id="w-input-search" value="" class="form-control input-md"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+                <div class="form-group text-left">
+                    <button id="button-id" type="button" class="btn btn-info">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+
+        $('#w-input-search').autocomplete({
+            serviceUrl: '/getTags',
+            paramName: "tagName",
+            delimiter: ",",
+            transformResult: function(response) {
+
+                return {
+                    //must convert json to javascript object before process
+                    suggestions: $.map($.parseJSON(response), function(item) {
+
+                        return { value: item.tagName, data: item.id };
+                    })
+                };
+            }
+        });
+    });
+</script>
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet"/>
+</body>
+</html>
