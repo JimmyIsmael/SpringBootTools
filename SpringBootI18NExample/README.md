@@ -14,7 +14,7 @@ Thymeleaf is an template engine that allows you to manipulate your HTML files in
 </dependency>
 ```
 ## Configuration Class
-Spring has its own way to deal with the internationalization part, for us to be able to work with it, we need to implement the followng methods on a configuration class.
+Spring has its own way to deal with the internationalization part, for us to be able to work with it, we need to implement the following methods on a configuration class.
 
 ```
 @Bean
@@ -36,11 +36,11 @@ public LocaleResolver localeResolver(){
 ```
 
 ## Messages Files
-Since in one of the previos methos we told to Spring that the messages will be in a folder called i18n/messages, we need to create that under the resources folder, and inside that folder create our messages files. 
+Since in one of the previous methods we have told to Spring that the messages will be in a folder called i18n/messages, we need to create that under the resources folder, and inside that folder create our messages files. 
 
-Keep in mind that the files need to have the followin naming convention: messages_<localeCode>.properties.
+Keep in mind that the files need to have the followin naming convention: messages_localeCode.properties.
   
-Waht this means is that if we want a messages file for Dominican Spanish it needs to be named as: messages_es_DO.properties. 
+What this means is that if we want a messages file for Dominican Spanish it needs to be named as: messages_es_DO.properties. 
 
 So we can declare that locale and call the file as we are going to show later.
 
@@ -85,7 +85,7 @@ public class WebController {
 ```
 
 ## HTML File
-Finally, we just need to tell our HTML how to call those messages, like this:
+Finally, we just need to tell our HTML how to call those messages using the thymeleaf th:text, like this:
 
 ```
 <!DOCTYPE html>
