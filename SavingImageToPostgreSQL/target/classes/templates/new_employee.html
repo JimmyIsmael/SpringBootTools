@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Employee Profile</h3>
+
+<form th:action="@{/save}" th:object="${employee}" method="post" enctype="multipart/form-data">
+    <input th:field="*{id}" type="text" id="id" name="id" readonly="true" placeholder="ID">
+    <br/>
+    <br/>
+    <input th:field="*{name}" type="text" id="name" name="name" placeholder="Name">
+    <br/>
+    <br/>
+    <input th:field="*{lastName}" type="text" id="lastName" name="lastName" placeholder="Last Name">
+    <br/>
+    <br/>
+    <img th:src="@{|/photo/${id}|}" height="200" width="200"/>
+    <br/>
+    <input type="file" id="picture" name="picture" class="form-control col-md-7 col-xs-12">
+    <br/><br/>
+    <button id="send" type="submit">Submit</button>
+</form>
+</body>
+</html>
