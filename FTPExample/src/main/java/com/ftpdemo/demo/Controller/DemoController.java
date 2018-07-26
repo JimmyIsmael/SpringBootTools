@@ -12,10 +12,10 @@ import java.util.Date;
 @Controller
 public class DemoController {
 
-    String server = "sweetftp.swisher.com";
-    int port = 921;
-    String user = "ftpadmin";
-    String pass = "dsCpLKDV3e";
+    String server = "yourftpserver.com";
+    int port = 21;
+    String user = "user";
+    String pass = "password";
 
     @RequestMapping("/")
     public String index(){
@@ -34,8 +34,8 @@ public class DemoController {
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 
             // APPROACH #1: using retrieveFile(String, OutputStream)
-            String remoteFile1 = "/Hempire/Confirmation_Log/confirmation_log.xlsx";
-            File downloadFile1 = new File("confirmation_log.xlsx");
+            String remoteFile1 = "yourFile/Path/test.txt";
+            File downloadFile1 = new File("location/toDownload/test.txt");
             OutputStream outputStream1 = new BufferedOutputStream(new FileOutputStream(downloadFile1));
             boolean success = ftpClient.retrieveFile(remoteFile1, outputStream1);
             outputStream1.close();
